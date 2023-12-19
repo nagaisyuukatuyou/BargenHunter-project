@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->foreignId('product_id')->constrained();
             $table->foreignId('supermarket_id')->constrained();
-            $table->integer('price');
+            $table->integer('price')->nullable();
             $table->timestamps();
 
             $table->primary(['product_id', 'supermarket_id']);
