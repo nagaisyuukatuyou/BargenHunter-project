@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/sample.css') }}">
-    <title></title>
+    <title>{{ $category->title }}</title>
 </head>
 <body>
-    <div class="grid">
+    <h1>{{ $category->title }}</h1>
+    <div class="grid-seika">
     @foreach($products as $product)
-        <div class="item">
-            <p>{{ $product->product_name }}</p>
+        <div class="item-seika">
+            <img src="{{ asset('images/' . $category->title . '/' . $product->image) }}", width="100", height="100">
+            <br>
+            <a href="#">{{ $product->product_name }}</a>
         </div>
     @endforeach
     </div>

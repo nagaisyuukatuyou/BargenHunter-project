@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('User/categories',[ CategoryController::class, 'index']);
-Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts']);
+Route::get('User/categories',[ CategoryController::class, 'index'])->name('categories');
+Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts'])->name('products');
 
 

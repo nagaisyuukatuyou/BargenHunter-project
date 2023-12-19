@@ -13,7 +13,7 @@
         <div class="item">
             <img src="{{ asset('images/' . $category->image) }}", width="100" height="100">
             <br>
-            <a href="{{ $category->id }}">{{ $category->title }}</a>
+            <a href="{{ route('products', ['category_id' => $category->id]) }}">{{ $category->title }}</a>
             <p>{{ $category->sub_title }}</p>
         </div>
     @endforeach

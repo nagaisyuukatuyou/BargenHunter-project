@@ -16,7 +16,7 @@ class SupermarketsTableSeeder extends Seeder
         //
         $supermarkets = [
             ['s_name' => 'KOHYO三宮店'],
-            ['s_name' => 'スーパーマルハチ　柳原店'],
+            ['s_name' => 'スーパーマルハチ柳原店'],
             ['s_name' => 'ダイエー神戸三宮店'],
             ['s_name' => 'ライフ神戸駅前店'],
         ];

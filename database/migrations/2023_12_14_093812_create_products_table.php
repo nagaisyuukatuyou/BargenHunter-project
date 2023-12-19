@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name', 100);
             $table->foreignId('category_id')->constrained();
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable();
             $table->timestamps();
 
             //$table->primary(['id', 'category_id']);

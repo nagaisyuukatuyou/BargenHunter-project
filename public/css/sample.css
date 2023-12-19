@@ -11,3 +11,13 @@
 a,a:hover,a:visited{
   color: #0071d1;/*カラーコードは任意*/
 }
+
+.grid-seika {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+  .item-seika {
+    /*background-color: #ccc;*/
+    padding: 10px;
+  }
