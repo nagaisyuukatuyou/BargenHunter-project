@@ -28,7 +28,7 @@ class CategoriesTableSeeder extends Seeder
             ['title' => '米', 'sub_title' => '精米、無洗米', 'image' => 'kome.jpg'],
             ['title' => '日用品', 'sub_title' => '日常生活に使う品物', 'image' => 'nitiyouhin.jpg'],
             ['title' => '調味料', 'sub_title' => '料理の調味に使う材料', 'image' => 'tyoumiryou.jpg'],
-            ['title' => 'その他', 'sub_title' => '', 'image' => ''],
+            //['title' => 'その他', 'sub_title' => '', 'image' => ''],
         ];
 
         foreach($categories as $category){

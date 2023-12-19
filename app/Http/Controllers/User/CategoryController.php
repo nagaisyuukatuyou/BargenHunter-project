@@ -27,10 +27,21 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function getCategory(string $id){
-        
+    public function getCategory(string $id): View
+    {
             $category = Category::findOrFail($id);
 
-            return $category;
+            return view('category', [
+                'category' => $category,
+            ]);
+    }
+
+    public function getProducts(string $category_id): View
+    {
+        $products = Product::select('*')->where('category_id', $category_id)->get();
+
+        return view('products', [
+            'products' => $products,
+        ]);
     }
 }

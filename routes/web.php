@@ -20,6 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('User/categories',[ CategoryController::class, 'index']);
-Route::get('User/categories/{id}', [CategoryController::class, 'getCategory']);
+Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts']);
 
 
