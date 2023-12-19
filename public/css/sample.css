@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .item {
+    /*background-color: #ccc;*/
+    padding: 10px;
+  }
+
+a,a:hover,a:visited{
+  color: #0071d1;/*カラーコードは任意*/
+}
