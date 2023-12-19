@@ -27,7 +27,7 @@ class CategoriesTableSeeder extends Seeder
             ['title' => 'パン', 'sub_title' => '菓子パン、食パン', 'image' => 'bread.jpg'],
             ['title' => '米', 'sub_title' => '精米、無洗米', 'image' => 'kome.jpg'],
             ['title' => '日用品', 'sub_title' => '日常生活に使う品物', 'image' => 'nitiyouhin.jpg'],
-            
+            ['title' => '調味料', 'sub_title' => '料理の調味に使う材料', 'image' => 'tyoumiryou.jpg'],
             
         ];
 
