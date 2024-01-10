@@ -3,6 +3,9 @@
 use App\Http\Controllers\User\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\DataBaseController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +25,13 @@ Route::get('/', function () {
 Route::get('User/categories',[ CategoryController::class, 'index'])->name('categories');
 Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts'])->name('products');
 
+Route::get('Controllers/Auth/AuthController', [AuthController::class, 'showLogin'])->name('showLogin');
+Route::post('login', [AuthController::class, 'login'])->name('login');
+
+Route::get('home', function(){
+    return view('login.home');
+})->name('home');
+
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('store', [RegisterController::class, 'store'])->name('store');
 
