@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::get('User/categories',[ CategoryController::class, 'index'])->name('categories');
 Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts'])->name('products');
 
+//ログイン
 Route::get('Controllers/Auth/AuthController', [AuthController::class, 'showLogin'])->name('showLogin');
 Route::post('login', [AuthController::class, 'login'])->name('login');
 
@@ -32,6 +33,9 @@ Route::get('home', function(){
     return view('login.home');
 })->name('home');
 
+//新規登録
 Route::get('/register', [RegisterController::class, 'create'])->name('register');
 Route::post('store', [RegisterController::class, 'store'])->name('store');
 
+//ログアウト
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');

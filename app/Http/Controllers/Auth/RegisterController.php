@@ -49,7 +49,7 @@ class RegisterController extends Controller
 
         Auth::login($user);
 
-        echo '登録成功';
+        return redirect('home')->with('login_success', '登録成功しました');
         //return redirect(RouteServiceProvider::HOME);
     }
 
