@@ -28,10 +28,11 @@
     <div class="shop-list-item">
       <div class="shop-list-item-info">
         <div class="shop-list-item-name">スーパー名：{{ $result->s_name }}</div>
-        <div class="shop-list-item-price">価格：{{ $result->price }}</div>
-        <div class="shop-list-item-address">住所：{{ $result->address }}</div>
+        <div class="shop-list-item-price">価格：{{ $result->price }}円</div>
+        <div class="shop-list-item-address">所在地：{{ $result->address }}</div>
         <div class="shop-list-item-hours">開店時間：{{ $result->open_time }}</div>
         <div class="shop-list-item-hours">開店時間：{{ $result->close_time }}</div>
+        <div class="shop-list-item-address">電話番号：{{ $result->phone_number }}</div>
         <br>
     </div>
     </div>
