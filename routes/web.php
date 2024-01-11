@@ -21,5 +21,6 @@ Route::get('/', function () {
 
 Route::get('User/categories',[ CategoryController::class, 'index'])->name('categories');
 Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts'])->name('products');
+Route::get('User/categories/{category_id}/{product_id}', [CategoryController::class, 'getPrices'])->name('prices');
 
 
