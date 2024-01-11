@@ -11,7 +11,7 @@
 </head>
 <body>
   <header>
-    <img src="https://i.imgur.com/5zQvzJj.png" alt="logo">
+    <a href="{{ route('home') }}"><img src="https://i.imgur.com/5zQvzJj.png" alt="logo"></a>
     <input type="text" placeholder="検索">
     <button>検索</button>
   </header>

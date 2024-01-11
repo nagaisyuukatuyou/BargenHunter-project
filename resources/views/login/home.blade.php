@@ -21,6 +21,7 @@
             @csrf
         <button>ログアウト</button>
         </form>
+        <a href="{{ route('categories') }}"><button>戻る</button></a>
     </div>
 </body>
 </html>

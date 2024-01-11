@@ -10,7 +10,7 @@
 <main class="form-signin w-100 m-auto">
   <form  method="POST" action="{{ route('login') }}">
     @csrf
-    <h1 class="h3 mb-3 fw-normal">ログイン</h1>
+    <h1 class="title">ログイン</h1>
 
     @foreach ($errors->all() as $error)
     <ul class="alert alert-danger">
@@ -38,9 +38,13 @@
         Remember me
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">ログイン</button>
+    <div class="login">
+      <button class="loginButton" type="submit">ログイン</button>
+    </div>
   </form>
-  <button onclick="location.href='{{ route('register') }}'">新規登録</button>
+  <div class="create">
+    <button onclick="location.href='{{ route('register') }}'">新規登録</button>
+  </div>
 </main>
  
 </body>

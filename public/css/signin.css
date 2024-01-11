@@ -15,9 +15,10 @@ body {
 
 .form-signin {
     width: 100%;
-    max-width: 330px;
+    max-width: 400px;
     padding: 15px;
     margin: auto;
+    border: solid 2px;
 }
 
 .form-signin .checkbox {
@@ -46,4 +47,26 @@ body {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+.form-control {
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
+
+.create {
+    text-align: center;
+}
+
+button {}
+
+.loginButton {
+    background-color: deepskyblue;
 }

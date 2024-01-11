@@ -32,7 +32,7 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 
 Route::get('home', function(){
     return view('login.home');
-})->name('home');
+})->name('home')->middleware('auth');
 
 //新規登録
 Route::get('/register', [RegisterController::class, 'create'])->name('register');
