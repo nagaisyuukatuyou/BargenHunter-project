@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム画面</title>
+    <link href="/css/home.css" rel="stylesheet">
 </head>
+<header>
+    <h2>マイページ</h2>
+</header>
+
 <body>
     <div class="container">
         @if (session('login_success'))
-            <div class="alert alert-success">
-                {{ session('login_success') }}
-            </div>     
+        <div class="alert alert-success">
+            {{ session('login_success') }}
+        </div>
         @endif
-        <h3>プロフィール</h3>
-        <ul>
+        <h3>{{ Auth::user()->name }}</h3>
+        <!--<ul>
             <li>名前：{{ Auth::user()->name }}</li>
             <li>メールアドレス: {{ Auth::user()->email }}</li>
-        </ul>
-        <form method="POST" action="{{ route('logout') }}">
+        </ul>-->
+        <div class="select">
+            <a href="{{ route('userInfo') }}"><button>登録情報</button></a>
+            <button>お気に入りのお店</button>
+            <a href="{{ route('categories') }}"><button>トップページ</button></a>
+        </div>
+        <form class="logout" method="POST" action="{{ route('logout') }}">
             @csrf
-        <button>ログアウト</button>
+            <button>ログアウト</button>
         </form>
-        <a href="{{ route('categories') }}"><button>戻る</button></a>
     </div>
 </body>
+
 </html>

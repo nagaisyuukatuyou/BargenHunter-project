@@ -6,6 +6,9 @@
     <title>ログインフォーム</title>
     <link href="/css/signin.css" rel="stylesheet">
 </head>
+<header>
+  <h2>ログインフォーム</h2>
+</header>
 <body>
 <main class="form-signin w-100 m-auto">
   <form  method="POST" action="{{ route('login') }}">

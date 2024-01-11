@@ -40,3 +40,7 @@ Route::post('store', [RegisterController::class, 'store'])->name('store');
 
 //ログアウト
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('userInfo', function(){
+    return view('mypage.userInfo');
+})->name('userInfo');
