@@ -54,29 +54,35 @@ class CategoryController extends Controller
     public function getResults(string $product_id)
     {   
         //スーパーマーケットテーブル、価格テーブル、スーパー詳細テーブルを結合し、以下のIDと一致するカラムを全件取得
-        $results = DB::table('prices')
-    ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
-    ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
-    ->select('prices.*', 'supermarkets.*', 'supermarket_details.*')
-    ->where('prices.product_id', '=', $product_id)
-    ->get();
+        $sql = DB::table('prices')
+        ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
+        ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
+        ->select('prices.*', 'supermarkets.*', 'supermarket_details.*')
+        ->where('prices.product_id', '=', $product_id)
+        ->orderBy('price');
 
-        return $results;
+        $results = $sql->get();
+        $minresult = $sql->limit(1)->first();
+
+        return [$results, $minresult];
     }
     
     //カテゴリテーブルと商品テーブルを操作するため、変数は2つ設定する
     public function getPrices(string $category_id, string $product_id): View
     {   
         //商品テーブルに格納されている画像名をproduct_idと一致したものを取得する
-        $img = Product::select('image')->where('id', $product_id)->first();
+        $img_name = Product::select('image', 'product_name')->where('id', $product_id)->first();
         $results = $this->getResults($product_id);
         //カテゴリIDと一致するカラムの情報を取得
         $category = $this->getCategory($category_id);
-        $count = count($results);
+        $Results = $results[0];
+        $Minresult = $results[1];
+        $count = count($Results);
         
         return view('results', [
-           'img' => $img,
-           'results' => $results,
+           'img_name' => $img_name,
+           'results' => $Results,
+           'minresult' => $Minresult,
            'count' => $count,
            'category' => $category,
         ]);

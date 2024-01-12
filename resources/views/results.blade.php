@@ -22,7 +22,19 @@
   <br>
   <div style="margin: 0 auto; width: 1050px;"><!--追加-->
   <div class="ice-cream-photo">
-    <img src="{{ asset('images/' . $category->title . '/' . $img->image) }}" width="300" height="300">
+    <img src="{{ asset('images/' . $category->title . '/' . $img_name->image) }}" width="300" height="300">
+    <h2>{{ $img_name->product_name }}の最安値：{{ $minresult->price }}円</h2>
+    <img src="{{ asset('images/店画像/'. '/' . $minresult->s_image) }}" width="100" height="100">
+      <div class="shop-list-item-info">
+        <div class="shop-list-item-name">スーパー名：{{ $minresult->s_name }}</div>
+        <div class="shop-list-item-price">価格：{{ $minresult->price }}円</div>
+        <div class="shop-list-item-address">所在地：{{ $minresult->address }}</div>
+        <div class="shop-list-item-hours">開店時間：{{ $minresult->open_time }}</div>
+        <div class="shop-list-item-hours">開店時間：{{ $minresult->close_time }}</div>
+        <div class="shop-list-item-address">電話番号：{{ $minresult->phone_number }}</div>
+        <div class="shop-list-item-address">ウェブサイト：<a href="{{ $minresult->web_site }}" class="btn">こちら</a></div>
+        <br>
+    </div>
   </div>
   <div class="shop-list">
   @foreach($results as $result)
@@ -35,7 +47,7 @@
         <div class="shop-list-item-hours">開店時間：{{ $result->open_time }}</div>
         <div class="shop-list-item-hours">開店時間：{{ $result->close_time }}</div>
         <div class="shop-list-item-address">電話番号：{{ $result->phone_number }}</div>
-        <div class="shop-list-item-address">ウェブサイト：<a href="{{ $result->web_site }}">{{ $result->web_site }}</a></div>
+        <div class="shop-list-item-address">ウェブサイト：<a href="{{ $result->web_site }}" class="btn">こちら</a></div>
         <br>
     </div>
     </div>
