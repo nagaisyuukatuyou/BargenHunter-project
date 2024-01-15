@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h2>マイページ</h2>
+        <h3 class="title">マイページ</h3>
     </header>
     <div class="container">
         @if (session('login_success'))
@@ -18,7 +18,7 @@
             {{ session('login_success') }}
         </div>
         @endif
-        <h3>{{ Auth::user()->name }}</h3>
+        <h3>ようこそ、{{ Auth::user()->name }}さん</h3>
         <!--<ul>
             <li>名前：{{ Auth::user()->name }}</li>
             <li>メールアドレス: {{ Auth::user()->email }}</li>

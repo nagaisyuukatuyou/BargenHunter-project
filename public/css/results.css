@@ -144,8 +144,6 @@ body {
 }
 
 button {
-  width: 40px;
-  height: 40px;
   background-color: rgb(176, 176, 232);
-  font-size: 20px;
+  font-size: 15px;
 }

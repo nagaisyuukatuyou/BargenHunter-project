@@ -21,7 +21,21 @@ class FavoriteController extends Controller
         $user = User::find($userId);
         //dd($supermarket_id, $userId, $user);
         $user->supermarkets()->attach($supermarket_id);
-        return view('login.login_form');
+
+        return redirect()->route('favoriteView');
+    }
+
+    //お気に入り削除
+    public function delete(Request $request)
+    {
+        $supermarket_id = $request->supermarket_id;
+        $userId = Auth::id();
+
+        $user = User::find($userId);
+        $user->supermarkets()->detach($supermarket_id);
+
+        return redirect()->route('favoriteView');
+
     }
 
     //お気に入りデータ取得
@@ -38,9 +52,18 @@ class FavoriteController extends Controller
 
         }
 
-        $results = $this->convert($results);
 
-        return view('mypage.favorite', ['results' => $results]);
+        if (!empty($results)) {
+
+
+            $results = $this->convert($results);
+            return view('mypage.favorite', ['results' => $results]);
+
+        } else {
+
+            echo 'なし';
+
+        }
 
     }
 

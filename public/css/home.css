@@ -1,8 +1,9 @@
-h2 {}
+.title {
+    margin-left: 70px;
+}
 
 header {
     background-color: #00bfff;
-    text-align: center;
     margin-top: 0;
     padding: 10px;
 }
@@ -13,6 +14,7 @@ body {
 
 .container {
     text-align: center;
+    margin-top: 60px;
 }
 
 button {
@@ -31,4 +33,9 @@ button {
 
 .logout {
     margin-top: 50px;
+}
+
+.user-info {
+    text-align: center;
+    margin-top: 70px;
 }

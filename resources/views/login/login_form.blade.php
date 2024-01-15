@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h2>ログインフォーム</h2>
+        <h3>ログインフォーム</h3>
     </header>
     <main class="form-signin w-100 m-auto">
         <form method="POST" action="{{ route('login') }}">
