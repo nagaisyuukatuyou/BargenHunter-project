@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Supermarket extends Model
 {
     use HasFactory;
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps()->withPivot('supermarket_id');
+    }
+
 }

@@ -7,11 +7,11 @@
     <title>ホーム画面</title>
     <link href="/css/home.css" rel="stylesheet">
 </head>
-<header>
-    <h2>マイページ</h2>
-</header>
 
 <body>
+    <header>
+        <h2>マイページ</h2>
+    </header>
     <div class="container">
         @if (session('login_success'))
         <div class="alert alert-success">
@@ -25,7 +25,7 @@
         </ul>-->
         <div class="select">
             <a href="{{ route('userInfo') }}"><button>登録情報</button></a>
-            <button>お気に入りのお店</button>
+            <a href="{{ route('favoriteView') }}"><button>お気に入りのお店</button></a>
             <a href="{{ route('categories') }}"><button>トップページ</button></a>
         </div>
         <form class="logout" method="POST" action="{{ route('logout') }}">

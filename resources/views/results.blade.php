@@ -37,10 +37,23 @@
                 <div class="shop-list-item-address">電話番号：{{ $result->phone_number }}</div>
                 <br>
             </div>
-            <button>☆</button>
+            <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                <input type="hidden" name="supermarket_id" value="{{ $result->id }}">
+                <button type="submit">☆</button>
+            </form>
         </div>
         @endforeach
     </div>
 </body>
 
 </html>
+
+<script>
+function confirm_favorite() {
+    var select = confirm("お気に入り登録しますか？");
+    return select;
+
+}
+</script>
