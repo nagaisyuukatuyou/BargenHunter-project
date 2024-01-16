@@ -18,13 +18,15 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
-    
-   
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -46,5 +48,9 @@ class User extends Authenticatable
     ];
 
 
-    
+    public function supermarkets()
+    {
+        return $this->belongsToMany(Supermarket::class)->withPivot('supermarket_id')->withTimestamps();
+    }
+
 }

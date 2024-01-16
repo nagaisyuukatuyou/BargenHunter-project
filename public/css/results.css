@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: beige;
 }
+
 .header {
   background-color: #f2f2f2;
   padding: 10px;
@@ -11,6 +12,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 
 .btn {
   border-radius: 5px;
@@ -28,6 +30,7 @@ body {
   white-space: nowrap;
 }
 
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -39,6 +42,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-right: 10px;
 }
+
 .search-bar input {
   border: none;
   outline: none;
@@ -47,6 +51,7 @@ body {
   padding: 0 10px;
   font-size: 16px;
 }
+
 .search-bar button {
   border: none;
   outline: none;
@@ -54,10 +59,12 @@ body {
   cursor: pointer;
   margin-right: 10px;
 }
+
 .search-bar button img {
   width: 20px;
   height: 20px;
 }
+
 .user-profile {
   display: flex;
   align-items: center;
@@ -68,19 +75,23 @@ body {
   background-color: #f2f2f2;
   cursor: pointer;
 }
+
 .user-profile img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
 }
+
 .result-message {
   margin: 20px 0;
   font-size: 16px;
   text-align: center;
 }
+
 .result-message span {
   font-weight: bold;
 }
+
 .ice-cream-photo {
   height: 150px;
   margin-right: 20px;
@@ -88,6 +99,7 @@ body {
   float: right;
   /*width: 40%;*/
 }
+
 .shop-list {
   display: flex;
   flex-direction: column;
@@ -95,11 +107,13 @@ body {
   margin-right: 30px;
   /*background-color: aqua;*/
 }
+
 .shop-list-item {
   display: flex;
   margin-bottom: 10px;
   /*background-color: green;*/
 }
+
 .shop-list-item img {
   width: 200px;
   height: 200px;
@@ -107,37 +121,52 @@ body {
   object-fit: cover;
   /*border-radius: 50%;*/
 }
+
 .shop-list-item-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .shop-list-item-name {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
 }
+
 .shop-list-item-rating {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
+
 .shop-list-item-rating img {
   width: 15px;
   height: 15px;
   margin-right: 5px;
 }
+
 .shop-list-item-rating span {
   font-size: 14px;
 }
+
 .shop-list-item-price {
   font-size: 14px;
   margin-bottom: 5px;
 }
+
 .shop-list-item-address {
   font-size: 14px;
   margin-bottom: 5px;
 }
+
 .shop-list-item-hours {
   font-size: 14px;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(176, 176, 232);
+  font-size: 20px;
 }

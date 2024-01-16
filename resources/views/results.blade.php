@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>画面のレイアウト</title>
-  <link rel="stylesheet" href="{{ asset('css/results.css') }}">
+    <meta charset="UTF-8">
+    <title>画面のレイアウト</title>
+    <link rel="stylesheet" href="{{ asset('css/results.css') }}">
 </head>
+
 <body>
+
   <div class="header">
   <form action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
     <div class="search-bar">
@@ -61,6 +64,13 @@
     <p style="color: red;">別の検索ワードを試してみてください。</p>
     @endforelse
   </div>
-    </div>
 </body>
 </html>
+
+<script>
+function confirm_favorite() {
+    var select = confirm("お気に入り登録しますか？");
+    return select;
+
+}
+</script>

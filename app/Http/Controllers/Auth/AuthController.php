@@ -16,15 +16,15 @@ class AuthController extends Controller
     }
 
     /** 
-    *@param App\Http\Requests\LoginFormRequest $request
-    */
+     *@param App\Http\Requests\LoginFormRequest $request
+     */
     public function login(LoginFormRequest $request)
     {
         //dd($request->all());
         $credentials = $request->only('email', 'password');
         //dd($credentials);
 
-        if (Auth::attempt($credentials)){
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect('home')->with('login_success', 'ログイン成功しました');
@@ -46,5 +46,5 @@ class AuthController extends Controller
 
         return redirect()->route('showLogin');
     }
-    
+
 }
