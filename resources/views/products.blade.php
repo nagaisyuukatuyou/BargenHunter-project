@@ -13,7 +13,7 @@
         <div class="item-seika">
             <img src="{{ asset('images/' . $category->title . '/' . $product->image) }}", width="100", height="100">
             <br>
-            <a href="#">{{ $product->product_name }}</a>
+            <a href="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->id]) }}">{{ $product->product_name }}</a>
         </div>
     @endforeach
     </div>
