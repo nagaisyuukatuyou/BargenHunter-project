@@ -36,6 +36,11 @@
                 <div class="shop-list-item-hours">開店時間：{{ $result->close_time }}</div>
                 <div class="shop-list-item-address">電話番号：{{ $result->phone_number }}</div>
                 <br>
+
+
+
+
+
                 <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::id() }}">
@@ -51,9 +56,9 @@
 </html>
 
 <script>
-function confirm_favorite() {
-    var select = confirm("お気に入り登録しますか？");
-    return select;
+function confirm_favorite
+var select = confirm("お気に入り登録しますか        
+    return sele ct;
 
 }
 </script>
