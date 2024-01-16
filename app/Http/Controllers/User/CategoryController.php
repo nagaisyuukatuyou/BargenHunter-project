@@ -108,9 +108,6 @@ class CategoryController extends Controller
             $keyword = $keyword;
             
         }
-        else{
-            $keyword = '';
-        }
         
         return view('results', [
            'img_name' => $img_name,
