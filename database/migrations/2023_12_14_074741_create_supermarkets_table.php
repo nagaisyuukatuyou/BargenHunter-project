@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('supermarkets', function (Blueprint $table) {
             $table->id();
             $table->string('s_name', 100);
+            $table->string('s_image', 100);
             $table->timestamps();
         });
     }
