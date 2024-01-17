@@ -12,8 +12,10 @@
 <body>
   <header>
     <a href="{{ route('home') }}"><img src="https://i.imgur.com/5zQvzJj.png" alt="logo"></a>
-    <input type="text" placeholder="検索">
-    <button>検索</button>
+    <form style="display: inline;" action="{{ route('categories') }}" method="GET">
+      <input type="text" placeholder="検索" name="keyword">
+      <button>検索</button>
+    </form>
   </header>
   <h1>カテゴリ</h1>
   <div class="categories">

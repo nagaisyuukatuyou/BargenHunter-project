@@ -12,7 +12,7 @@
   <div class="header">
   <form action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
     <div class="search-bar">
-        <input type="text" placeholder="検索" name="keyword">
+        <input type="text" placeholder="検索" name="keyword" autocomplete="off">
         <button><img src="https://i.imgur.com/6Z4d5Jj.png" alt="マイク"></button>
     </div>
   </form>
@@ -44,7 +44,6 @@
   <div class="shop-list">
     @if($keyword)
       <p>検索ワード：<span class="keyword">{{ $keyword }}</span></p>
-
     @endif
   @forelse($results as $result)
     <div class="shop-list-item">
