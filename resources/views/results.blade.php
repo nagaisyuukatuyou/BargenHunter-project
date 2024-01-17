@@ -86,7 +86,7 @@
 </html>
 
 <script>
-function confirm_favorite {
+function confirm_favorite() {
     var select = confirm("お気に入り登録しますか？");
     return select;
 }
