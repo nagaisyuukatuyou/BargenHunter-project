@@ -43,7 +43,14 @@
                         target="_blank">こちら</a></div>
                 <br>
             </div>
+            <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                <input type="hidden" name="supermarket_id" value="{{ $minresult->id }}">
+                <button type="submit">お気に入り</button>
+            </form>
         </div>
+
         <div class="shop-list">
             @if($keyword)
             <p>検索ワード：<span class="keyword">{{ $keyword }}</span></p>
@@ -68,7 +75,7 @@
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <input type="hidden" name="supermarket_id" value="{{ $result->id }}">
-                <button type="submit">お気に入り</button>
+                <button class="many" type="submit">お気に入り</button>
             </form>
             @empty
             <p style="color: red;">別の検索ワードを試してみてください。</p>
@@ -79,7 +86,7 @@
 </html>
 
 <script>
-function confirm_favorite() {
+function confirm_favorite {
     var select = confirm("お気に入り登録しますか？");
     return select;
 }

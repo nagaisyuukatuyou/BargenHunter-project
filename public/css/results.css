@@ -168,3 +168,7 @@ button {
   background-color: rgb(176, 176, 232);
   font-size: 15px;
 }
+
+.many {
+  margin-bottom: 20px;
+}

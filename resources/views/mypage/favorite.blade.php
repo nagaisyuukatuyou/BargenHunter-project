@@ -16,6 +16,10 @@
     @if (!empty($results))
     @foreach($results as $result)
     <div class="shop-list">
+        <div class="name">
+            <h2 class="shop-name">{{ $result->s_name }}</h3>
+        </div>
+        <img src="{{ asset('images/店画像/'. '/' . $result->s_image) }}" width="300" height="300">
         <div class="name">スーパー名：{{ $result->s_name }}</div>
         <div class="address">所在地：{{ $result->address }}</div>
         <div class="open-time">開店時間：{{ $result->open_time }}</div>
