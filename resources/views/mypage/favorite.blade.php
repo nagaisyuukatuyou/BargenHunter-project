@@ -12,6 +12,8 @@
     <header>
         <h3>お気に入り一覧</h3>
     </header>
+
+    @if (!empty($results))
     @foreach($results as $result)
     <div class="shop-list">
         <div class="name">スーパー名：{{ $result->s_name }}</div>
@@ -28,6 +30,10 @@
         </form>
     </div>
     @endforeach
+    @else
+    <div class="shop-list">お気に入り登録されているお店はありません。</div>
+    @endif
+
 
 
 </body>

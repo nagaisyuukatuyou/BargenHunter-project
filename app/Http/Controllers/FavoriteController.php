@@ -61,7 +61,7 @@ class FavoriteController extends Controller
 
         } else {
 
-            echo 'なし';
+            return view('mypage.favorite');
 
         }
 
