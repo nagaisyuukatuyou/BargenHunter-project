@@ -6,8 +6,28 @@
     <link rel="stylesheet" href="{{ asset('css/sample.css') }}">
     <title>{{ $category->title }}</title>
 </head>
-<body>
-    <h1>{{ $category->title }}</h1>
+<body class="body">
+
+  <header>
+  <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
+    <!-- <form style="display: inline;" action="{{ route('categories') }}" method="GET">
+      <input type="text" placeholder="検索" name="keyword">
+      <button>検索</button>
+    </form> -->
+    <p class="font">{{ $category->title }}</p>
+    <a href="{{ route('home') }}"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
+  </header>
+
+    <!-- <div>
+        <h1>{{ $category->title }}</h1>
+    </div> -->
+    <br>
+    <div class="back">
+        <a class="color" href="{{ route('categories') }}">カテゴリ</a>
+        <span class="color">　>　</span>
+        <span class="result" href="{{ route('products', ['category_id' => $category->id]) }}">{{ $category->title }}</span>
+    </div>
+    <hr style="margin: 10px 0 0 0;">
     <div class="grid-seika">
     @foreach($products as $product)
         <div class="item-seika">

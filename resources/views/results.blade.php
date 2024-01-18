@@ -8,8 +8,7 @@
 </head>
 
 <body>
-
-  <div class="header">
+  <!-- <div class="header">
   <form action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
     <div class="search-bar">
         <input type="text" placeholder="検索" name="keyword" autocomplete="off">
@@ -19,13 +18,30 @@
     <div class="user-profile">
       <img src="https://i.imgur.com/7b3Yw2K.png" alt="ユーザー">
     </div>
-  </div>
+  </div> -->
+
+  <header>
+  <a href="{{ route('top_page') }}" style="margin-right: 120px;"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
+    <form style="display: inline;" action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
+      <input type="text" placeholder="検索" name="keyword">
+      <button>検索</button>
+    </form>
+    <a style="margin-left: 120px" href="{{ route('home') }}"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
+  </header>
+
   <div class="result-message">
     <h2>{{ $count }}件のスーパーがヒットしました。</h2>
   </div>
-  <hr>
+  <div class="back">
+  <a class="color" href="{{ route('categories') }}">カテゴリ</a>
+    <span class="color">　>　</span>
+  <a class="color" href="{{ route('products', ['category_id' => $category->id]) }}">{{ $category->title }}</a>
+    <span class="color">　>　</span>
+    <span class="result">{{ $img_name->product_name }}</span>
+  </div>
+   <hr>
   <br>
-  <div style="margin: 0 auto; width: 1050px;"><!--追加-->
+  <div style="margin: auto auto; width: 1050px;"><!--追加-->
   <div class="ice-cream-photo">
     <img src="{{ asset('images/' . $category->title . '/' . $img_name->image) }}" width="300" height="300">
     <h2>{{ $img_name->product_name }}の最安値：{{ $minresult->price }}円</h2>
