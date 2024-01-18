@@ -8,17 +8,6 @@
 </head>
 
 <body>
-  <!-- <div class="header">
-  <form action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
-    <div class="search-bar">
-        <input type="text" placeholder="検索" name="keyword" autocomplete="off">
-        <button><img src="https://i.imgur.com/6Z4d5Jj.png" alt="マイク"></button>
-    </div>
-  </form>
-    <div class="user-profile">
-      <img src="https://i.imgur.com/7b3Yw2K.png" alt="ユーザー">
-    </div>
-  </div> -->
 
   <header>
   <a href="{{ route('top_page') }}" style="margin-right: 120px;"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
