@@ -1,0 +1,50 @@
+.title {
+    margin-left: 70px;
+}
+
+header {
+    background-color: #00bfff;
+    margin-top: 0;
+    padding: 10px;
+}
+
+body {
+    margin: 0;
+}
+
+h3 {
+    margin-left: 70px;
+}
+
+.title {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    border-bottom: solid 2px;
+}
+
+button {
+    background-color: #00bfff;
+    width: 120px;
+    height: 45px;
+}
+
+.create_user {
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    margin: 50px auto auto;
+    border: solid 2px;
+    text-align: center;
+}
+
+.create_button {
+    margin-top: 50px;
+    margin-bottom: 12px;
+}
+
+.text-name,
+.text-email,
+.text-password {
+    margin-bottom: 20px;
+}

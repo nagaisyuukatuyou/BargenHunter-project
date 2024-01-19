@@ -51,3 +51,4 @@ Route::get('userInfo', function () {
 
 //お気に入り画面表示
 Route::get('favoriteView', [FavoriteController::class, 'select'])->name('favoriteView');
+Route::post('favoriteDelete', [FavoriteController::class, 'delete'])->name('favoriteDelete');

@@ -23,6 +23,7 @@ class CategoryController extends Controller
         $keyword = $request->input('keyword');
 
         //カテゴリ一覧全件取得
+
         $sql = Category::query();//all();
 
         //検索欄が空でない場合は、入力された検索ワードとcategoriesテーブルの"title"または"sub_title"と照合する
@@ -35,6 +36,7 @@ class CategoryController extends Controller
         //データ取得
         $categories = $sql->get();
         //カテゴリIDを全件取得
+
         $category_id = Category::select('id')->get();
         //画像を全件取得
         $images = Category::select('image')->get();
@@ -56,8 +58,7 @@ class CategoryController extends Controller
     }
 
     public function getProducts(string $category_id): View
-
-    {   
+    {
         //商品テーブルの指定のカテゴリIDと一致するデータを全件取得
         $products = Product::select('*')->where('category_id', $category_id)->get();
         //指定のカテゴリIDとカテゴリテーブルのIDが一致するデータを取得する
@@ -74,10 +75,10 @@ class CategoryController extends Controller
         //スーパーマーケットテーブル、価格テーブル、スーパー詳細テーブルを結合し、以下のIDと一致するカラムを全件取得
 
         $sql = Price::query()
-        ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
-        ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
-        ->where('prices.product_id', '=', $product_id)
-        ->orderBy('price');
+            ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
+            ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
+            ->where('prices.product_id', '=', $product_id)
+            ->orderBy('price');
 
 
         $results = $sql->get();
@@ -90,7 +91,7 @@ class CategoryController extends Controller
     //カテゴリテーブルと商品テーブルを操作するため、変数は2つ設定する
 
     public function getPrices(string $category_id, string $product_id, Request $request): View
-    {   
+    {
         //商品テーブルに格納されている画像名をproduct_idと一致したものを取得する
         $img_name = Product::select('image', 'product_name')->where('id', $product_id)->first();
 
@@ -109,13 +110,15 @@ class CategoryController extends Controller
         $product = $results[2];
 
         $sql = Price::query()
-        ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
-        ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
-        ->where('prices.product_id', '=', $product_id)
-        ->orderBy('price');
+            ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
+            ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
+            ->where('prices.product_id', '=', $product_id)
+            ->orderBy('price');
 
 
-        if(!empty($keyword)) {
+
+
+        if (!empty($keyword)) {
             $sql->where('s_name', 'like', "%{$keyword}%");
             //$keyword = $keyword;
             $Results = $sql->get();
@@ -126,14 +129,15 @@ class CategoryController extends Controller
         $category = $this->getCategory($category_id);
         
 
+
         return view('results', [
-           'img_name' => $img_name,
-           'results' => $Results,
-           'minresult' => $Minresult,
-           'count' => $count,
-           'category' => $category,
-           'product' => $product,
-           'keyword' => $keyword,
+            'img_name' => $img_name,
+            'results' => $Results,
+            'minresult' => $Minresult,
+            'count' => $count,
+            'category' => $category,
+            'product' => $product,
+            'keyword' => $keyword,
         ]);
 
     }

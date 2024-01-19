@@ -45,6 +45,12 @@
         <div class="shop-list-item-address">ウェブサイト：<a href="{{ $minresult->web_site }}" class="btn" target="_blank">こちら</a></div>
         <br>
     </div>
+     <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+        <input type="hidden" name="supermarket_id" value="{{ $result->id }}">
+        <button class="many" type="submit">お気に入り</button>
+     </form>
   </div>
   <div class="shop-list">
     @if($keyword)
@@ -64,6 +70,12 @@
         <div class="shop-list-item-address">ウェブサイト：<a href="{{ $result->web_site }}" class="btn" target="_blank">こちら</a></div>
         <br>
     </div>
+      <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+        <input type="hidden" name="supermarket_id" value="{{ $minresult->id }}">
+        <button type="submit">お気に入り</button>
+      </form>
     </div>
     @empty
     <p style="color: red;">別の検索ワードを試してみてください。</p>
@@ -76,6 +88,5 @@
 function confirm_favorite() {
     var select = confirm("お気に入り登録しますか？");
     return select;
-
 }
 </script>
