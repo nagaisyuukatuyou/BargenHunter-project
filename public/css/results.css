@@ -233,7 +233,8 @@ header button {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  
+}
+
 button {
   background-color: rgb(176, 176, 232);
   font-size: 15px;

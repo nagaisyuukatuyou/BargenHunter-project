@@ -48,7 +48,7 @@
      <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
         @csrf
         <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-        <input type="hidden" name="supermarket_id" value="{{ $result->id }}">
+        <input type="hidden" name="supermarket_id" value="{{ $minresult->id }}">
         <button class="many" type="submit">お気に入り</button>
      </form>
   </div>
@@ -73,7 +73,7 @@
       <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
         @csrf
         <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-        <input type="hidden" name="supermarket_id" value="{{ $minresult->id }}">
+        <input type="hidden" name="supermarket_id" value="{{ $result->id }}">
         <button type="submit">お気に入り</button>
       </form>
     </div>
