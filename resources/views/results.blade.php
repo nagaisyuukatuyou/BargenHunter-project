@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>画面のレイアウト</title>
+    <title>結果一覧</title>
     <link rel="stylesheet" href="{{ asset('css/results.css') }}">
 </head>
 
