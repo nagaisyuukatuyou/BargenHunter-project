@@ -48,6 +48,7 @@
   </div>
   <div class="shop-list">
     @if($keyword)
+    <button style="width: 80px; font-size: 70%; background-color: pink; border-radius: 10px;" onclick="location.href='{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}'">結果一覧へ</button>
       <p>検索ワード：<span class="keyword">{{ $keyword }}</span></p>
     @endif
   @forelse($results as $result)

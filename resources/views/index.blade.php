@@ -19,7 +19,7 @@
     <a href="{{ route('home') }}" style="margin-left: 300px;"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
   </header>
   @if($keyword)
-    <p>検索ワード：<span style="color: blue;">{{ $keyword }}</span></p>
+    <p>検索ワード：<span style="color: blue;">{{ $keyword }}　　</span><a href="{{ route('categories') }}">カテゴリ一覧へ戻る</a></p>
   @endif
   <div class="categories">
     @forelse($categories as $category)
@@ -32,7 +32,6 @@
       </div>
       @empty
       <p>検索ワード「<span style="color: blue;">{{ $keyword }}</span>」にヒットする結果はありません。</p>
-      <a href="{{ route('categories') }}">カテゴリ一覧へ戻る</a>
     @endforelse
   </div>
   <footer>

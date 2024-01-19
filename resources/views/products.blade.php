@@ -10,17 +10,10 @@
 
   <header>
   <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
-    <!-- <form style="display: inline;" action="{{ route('categories') }}" method="GET">
-      <input type="text" placeholder="検索" name="keyword">
-      <button>検索</button>
-    </form> -->
     <p class="font">{{ $category->title }}</p>
     <a href="{{ route('home') }}"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
   </header>
 
-    <!-- <div>
-        <h1>{{ $category->title }}</h1>
-    </div> -->
     <br>
     <div class="back">
         <a class="color" href="{{ route('categories') }}">カテゴリ</a>

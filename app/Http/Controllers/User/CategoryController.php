@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Supermarket;
 use App\Models\SupermarketDetail;
 use App\Models\Price;
+use LDAP\Result;
 
 class CategoryController extends Controller
 {
@@ -81,8 +82,9 @@ class CategoryController extends Controller
 
         $results = $sql->get();
         $minresult = $sql->limit(1)->first();
+        $product = $sql->first();
 
-        return [$results, $minresult];
+        return [$results, $minresult, $product];
     }
 
     //カテゴリテーブルと商品テーブルを操作するため、変数は2つ設定する
@@ -94,34 +96,36 @@ class CategoryController extends Controller
 
         $keyword = $request->input('keyword');
 
+        //getResults関数を呼び出し、値を取得する。
+        $results = $this->getResults($product_id);
+
+        //値を全て取得
+        $Results = $results[0];
+        //最安値を取得
+        $Minresult = $results[1];
+        //取得したデータの数をカウントして取得
+        $count = count($Results);
+        //商品IDを取得
+        $product = $results[2];
+
         $sql = Price::query()
         ->join('supermarkets', 'prices.supermarket_id', '=', 'supermarkets.id')
         ->join('supermarket_details', 'supermarkets.id', '=', 'supermarket_details.supermarket_id')
         ->where('prices.product_id', '=', $product_id)
         ->orderBy('price');
 
-        //$sqlより得られたデータ群の先頭データ群を取得。$sqlの内容より、値段が最小のものが取得される。
-        //(URLに利用する不変のproduct_idを取得するためのコード)
-        $product = $sql->first();
-        //getResults関数を呼び出し、値を取得する。
-        $results = $this->getResults($product_id);
-
-        $Results = $results[0];
-
-        //カテゴリIDと一致するカラムの情報を取得
-        $category = $this->getCategory($category_id);
-        //
-        $Minresult = $results[1];
-        $count = count($Results);
 
         if(!empty($keyword)) {
             $sql->where('s_name', 'like', "%{$keyword}%");
+            //$keyword = $keyword;
             $Results = $sql->get();
             $count = count($Results);
-            $keyword = $keyword;
-            
         }
+
+        //カテゴリIDと一致するカラムの情報を取得
+        $category = $this->getCategory($category_id);
         
+
         return view('results', [
            'img_name' => $img_name,
            'results' => $Results,
