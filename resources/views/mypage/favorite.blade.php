@@ -37,6 +37,9 @@
     @else
     <div class="shop-list">お気に入り登録されているお店はありません。</div>
     @endif
+    <div class="back">
+        <a href="{{ route('home') }}"><button class="back-button">戻る</button></a>
+    </div>
 
 
 

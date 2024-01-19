@@ -26,7 +26,7 @@
         <div class="select">
             <a href="{{ route('userInfo') }}"><button>登録情報</button></a>
             <a href="{{ route('favoriteView') }}"><button>お気に入りのお店</button></a>
-            <a href="{{ route('categories') }}"><button>トップページ</button></a>
+            <a href="{{ route('top_page') }}"><button>トップページ</button></a>
         </div>
         <form class="logout" method="POST" action="{{ route('logout') }}">
             @csrf
