@@ -21,8 +21,8 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('toppage');
+})->name('top_page');
 
 Route::get('User/categories', [CategoryController::class, 'index'])->name('categories');
 Route::get('User/categories/{category_id}', [CategoryController::class, 'getProducts'])->name('products');

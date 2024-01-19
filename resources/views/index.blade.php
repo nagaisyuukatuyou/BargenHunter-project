@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="{{ asset('css/categories02.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,14 +10,19 @@
     <title>カテゴリ一覧</title>
 </head>
 <body>
-  <header>
-    <a href="{{ route('home') }}"><img src="https://i.imgur.com/5zQvzJj.png" alt="logo"></a>
-    <input type="text" placeholder="検索">
-    <button>検索</button>
+<header>
+  <a href="{{ route('top_page') }}" style="margin-right: 300px;"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
+    <form style="display: inline;" action="{{ route('categories') }}" method="GET">
+      <input type="text" placeholder="検索" name="keyword">
+      <button>検索</button>
+    </form>
+    <a href="{{ route('home') }}" style="margin-left: 300px;"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
   </header>
-  <h1>カテゴリ</h1>
+  @if($keyword)
+    <p>検索ワード：<span style="color: blue;">{{ $keyword }}　　</span><a href="{{ route('categories') }}">カテゴリ一覧へ戻る</a></p>
+  @endif
   <div class="categories">
-    @foreach($categories as $category)
+    @forelse($categories as $category)
       <div class="category">
         <a href="{{ route('products', ['category_id' => $category->id]) }}">
           <img src="{{ asset('images/' . $category->image) }}", width="100" height="100">
@@ -25,7 +30,12 @@
           <p>{{ $category->sub_title }}</p>
         </a>
       </div>
-    @endforeach
+      @empty
+      <p>検索ワード「<span style="color: blue;">{{ $keyword }}</span>」にヒットする結果はありません。</p>
+    @endforelse
   </div>
+  <footer>
+    <p>以上より商品のカテゴリーを選択してください。</p>
+  </footer>
 </body>
 </html>
