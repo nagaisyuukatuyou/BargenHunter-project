@@ -9,22 +9,22 @@
 </head>
 
 <body>
-    @if ($errors->any())
-    <div>
-        <div>something went wrong!</div>
-
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
     <header>
         <h3>新規登録</h3>
     </header>
     <div class="create_user">
         <h1 class="title">新規登録</h1>
+        @if ($errors->any())
+        <div>
+            <div>something went wrong!</div>
+
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <form method="POST" action="{{ route('store') }}">
             @csrf
             <div class="textarea">
