@@ -10,7 +10,11 @@
 
 <body>
     <header>
-        <h3>お気に入り一覧</h3>
+        <div class="header-contents">
+            <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}"
+                    alt="icon"></a>
+            <div class="title">お気に入り一覧</div>
+        </div>
     </header>
 
     @if (!empty($results))

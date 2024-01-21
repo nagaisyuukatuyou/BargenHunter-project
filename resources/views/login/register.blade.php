@@ -10,10 +10,14 @@
 
 <body>
     <header>
-        <h3>新規登録</h3>
+        <div class="header-contents">
+            <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}"
+                    alt="icon"></a>
+            <div class="title">新規登録</div>
+        </div>
     </header>
     <div class="create_user">
-        <h1 class="title">新規登録</h1>
+        <h1 class="title-b">新規登録</h1>
         @if ($errors->any())
         <div>
             <div>something went wrong!</div>

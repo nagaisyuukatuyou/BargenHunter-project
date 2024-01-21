@@ -24,6 +24,11 @@
 
     <div class="result-message">
         <h2>{{ $count }}件のスーパーがヒットしました。</h2>
+        <div clsss="error-message">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </div>
     </div>
     <div class="back">
         <a class="color" href="{{ route('categories') }}">カテゴリ</a>
@@ -51,12 +56,21 @@
                         target="_blank">こちら</a></div>
                 <br>
             </div>
+            @if(Auth::check())
             <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <input type="hidden" name="supermarket_id" value="{{ $minresult->id }}">
                 <button type="submit">お気に入り</button>
             </form>
+            <div clsss="error-message">
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </div>
+            @else
+            <a href="{{ route('showLogin') }}"><button>お気に入り</button></a>
+            @endif
         </div>
         <div class="shop-list">
             @if($keyword)
@@ -79,12 +93,16 @@
                     <br>
                 </div>
             </div>
+            @if(Auth::check())
             <form action="{{ route('insert') }}" method="POST" onsubmit="return confirm_favorite()">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                 <input type="hidden" name="supermarket_id" value="{{ $result->id }}">
                 <button class="many" type="submit">お気に入り</button>
             </form>
+            @else
+            <a href="{{ route('showLogin') }}"><button class="many">お気に入り</button></a>
+            @endif
             @empty
             <p style="color: red;">別の検索ワードを試してみてください。</p>
             @endforelse

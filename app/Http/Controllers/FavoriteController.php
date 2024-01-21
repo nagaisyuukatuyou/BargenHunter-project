@@ -23,6 +23,7 @@ class FavoriteController extends Controller
         $user->supermarkets()->attach($supermarket_id);
 
         return redirect()->route('favoriteView');
+
     }
 
     //お気に入り削除
