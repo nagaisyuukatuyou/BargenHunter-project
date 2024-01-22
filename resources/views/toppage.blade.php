@@ -12,6 +12,9 @@
         <img src="{{ asset('images/アイコン/toppage.jpg') }}" alt="">
     </div>
     <div class="buttons">
+    @if(Auth::check())
+    <p>ログイン中のユーザー：{{ Str::limit(Auth::user()->name, 6, '...') }}</p>
+    @endif
       <a class="button start" href="{{ route('categories') }}" style="text-decoration: none;"><div>スタート</div></a>
       <a class="button signin" href="{{ route('showLogin') }}" style="text-decoration: none;"><div>サインイン</div></a>
     </div>

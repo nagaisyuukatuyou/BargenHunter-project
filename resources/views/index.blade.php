@@ -16,7 +16,13 @@
       <input type="text" placeholder="検索" name="keyword">
       <button>検索</button>
     </form>
-    <a href="{{ route('home') }}" style="margin-left: 300px;"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
+      <a href="{{ route('home') }}" class="user-name" style="text-decoration: none;">
+      @if(Auth::check())
+      <span class="hid">{{ Str::limit(Auth::user()->name, '10', '...') }}</span>
+      @endif
+      <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
+    </a>
+      <!-- <a href="{{ route('home') }}"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a> -->
   </header>
   @if($keyword)
     <p>検索ワード：<span style="color: blue;">{{ $keyword }}　　</span><a href="{{ route('categories') }}">カテゴリ一覧へ戻る</a></p>

@@ -95,3 +95,17 @@ footer button {
     cursor: pointer;
     
   }
+
+
+a.user-name {
+    margin-left: 300px;
+    color: orange;
+}
+
+span.hid {
+    max-width: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
