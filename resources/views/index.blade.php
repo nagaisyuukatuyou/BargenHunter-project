@@ -16,11 +16,13 @@
       <input type="text" placeholder="検索" name="keyword">
       <button>検索</button>
     </form>
-      <a href="{{ route('home') }}" class="user-name" style="text-decoration: none;">
+    <a href="{{ route('home') }}" class="user-name" style="text-decoration: none;">
       @if(Auth::check())
-      <span class="hid">{{ Str::limit(Auth::user()->name, '10', '...') }}</span>
+      <span class="hid">
+        {{ Str::limit(Auth::user()->name, '10', '...') }}
       @endif
-      <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
+        <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
+      </span>
     </a>
       <!-- <a href="{{ route('home') }}"><img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a> -->
   </header>

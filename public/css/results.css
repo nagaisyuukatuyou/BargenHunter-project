@@ -243,3 +243,13 @@ button {
 .many {
   margin-bottom: 20px;
 }
+
+a.user-name {
+  color: orange;
+  float: right;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: black;
+}

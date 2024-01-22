@@ -30,9 +30,9 @@ a,a:hover,a:visited{
     padding: 10px;
   }
 
-  body.body {
-    margin: 0;
-    padding: 0;
+  body {
+    margin: 10;
+    padding: 10;
     font-family: Arial, sans-serif;
     background-color: beige;
   }
@@ -109,4 +109,23 @@ a,a:hover,a:visited{
     cursor: pointer;
     
   }
-  
+
+a.user-name {
+  color: orange;
+  float: right;
+}
+
+span.hid {
+  max-width: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+p.font {
+  color: aqua;
+}
+
+.left-a {
+    float: left;
+}
