@@ -10,12 +10,16 @@
 
 <body>
     <header>
-        <h3>ログインフォーム</h3>
+        <div class="header-contents">
+            <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}"
+                    alt="icon"></a>
+            <div class="title">ログイン</div>
+        </div>
     </header>
     <main class="form-signin w-100 m-auto">
         <form method="POST" action="{{ route('login') }}">
             @csrf
-            <h1 class="title">ログイン</h1>
+            <h1 class="title-b">ログイン</h1>
 
             @foreach ($errors->all() as $error)
             <ul class="alert alert-danger">

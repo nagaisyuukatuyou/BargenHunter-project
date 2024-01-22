@@ -10,7 +10,11 @@
 
 <body>
     <header>
-        <h3>お気に入り一覧</h3>
+        <div class="header-contents">
+            <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}"
+                    alt="icon"></a>
+            <div class="title">お気に入り一覧</div>
+        </div>
     </header>
 
     @if (!empty($results))
@@ -38,7 +42,7 @@
     <div class="shop-list">お気に入り登録されているお店はありません。</div>
     @endif
     <div class="back">
-        <a href="{{ route('home') }}"><button class="back-button">戻る</button></a>
+        <a href="{{ $url }}"><button class="back-button">戻る</button></a>
     </div>
 
 

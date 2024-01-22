@@ -10,7 +10,11 @@
 
 <body>
     <header>
-        <h3 class="title">マイページ</h3>
+        <div class="header-contents">
+            <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}"
+                    alt="icon"></a>
+            <div class="title">マイページ</div>
+        </div>
     </header>
     <div class="container">
         @if (session('login_success'))

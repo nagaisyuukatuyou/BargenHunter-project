@@ -23,6 +23,7 @@ class FavoriteController extends Controller
         $user->supermarkets()->attach($supermarket_id);
 
         return redirect()->route('favoriteView');
+
     }
 
     //お気に入り削除
@@ -42,6 +43,8 @@ class FavoriteController extends Controller
     public function select()
     {
 
+        $url = url()->previous();
+
         $userId = Auth::id();
         $user = User::find($userId);
 
@@ -57,15 +60,16 @@ class FavoriteController extends Controller
 
 
             $results = $this->convert($results);
-            return view('mypage.favorite', ['results' => $results]);
+            return view('mypage.favorite', ['results' => $results, 'url' => $url]);
 
         } else {
 
-            return view('mypage.favorite');
+            return view('mypage.favorite', ['url' => $url]);
 
         }
 
     }
+
 
     //supermarketsテーブル、supermarket_detailsテーブルを結合
     public function getResults(string $supermarket_id)
