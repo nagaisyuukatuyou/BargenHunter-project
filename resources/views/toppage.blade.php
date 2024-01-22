@@ -15,7 +15,7 @@
         </div>
         <div class="buttons">
             @if( Auth::check() )
-            <h3>ようこそ、{{ Auth::user()->name }}さん</h3>
+            <h3>ログイン中：{{ Str::limit(Auth::user()->name, '10', '...') }}</h3>
             @endif
             <a class="button start" href="{{ route('categories') }}" style="text-decoration: none;">
                 <div>スタート</div>
