@@ -19,7 +19,7 @@
     <a href="{{ route('home') }}" class="user-name" style="text-decoration: none;">
       @if(Auth::check())
       <span class="hid">
-        {{ Str::limit(Auth::user()->name, '10', '...') }}
+        {{ Str::limit(Auth::user()->name, '6', '...') }}
       @endif
         <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
       </span>

@@ -16,7 +16,7 @@
     <p class="font" style="margin: 0 510px 0 510px;">{{ $category->title }}</p>
         <a href="{{ route('home') }}" class="user-name" style="text-decoration: none;">
         @if(Auth::check())
-        <span class="hid">{{ Str::limit(Auth::user()->name, '10', '...') }}</span>
+        <span class="hid">{{ Str::limit(Auth::user()->name, '6', '...') }}</span>
         @endif
         <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
     </a>

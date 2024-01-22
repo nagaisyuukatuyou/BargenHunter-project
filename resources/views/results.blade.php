@@ -20,7 +20,7 @@
         </form>
         <a href="{{ route('home') }}" class="user-name" style="text-decoration: none; display:flex; align-items: center;">
             @if(Auth::check())
-                <span style="padding: 5px;">{{ Str::limit(Auth::user()->name, '10', '...') }}</span>
+                <span style="padding: 5px;">{{ Str::limit(Auth::user()->name, '6', '...') }}</span>
             @endif
             <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
         </a>
