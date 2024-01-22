@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <title>結果一覧</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/results.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
     <header>
-        <a href="{{ route('top_page') }}" style="margin-right: 120px;"><img
-                src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
-        <form style="display: inline;"
-            action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}"
-            method="GET">
+        <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
+        <form style="display: inline;" action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
             <input type="text" placeholder="検索" name="keyword">
             <button>検索</button>
         </form>
-        <a style="margin-left: 120px" href="{{ route('home') }}"><img class="user-profile"
-                src="{{ asset('images/アイコン/login.jpg') }}" alt="logo"></a>
+        <a href="{{ route('home') }}" class="user-name" style="text-decoration: none; display:flex; align-items: center;">
+            @if(Auth::check())
+                <span style="padding: 5px;">{{ Str::limit(Auth::user()->name, '10', '...') }}</span>
+            @endif
+            <img class="user-profile" src="{{ asset('images/アイコン/login.jpg') }}" alt="logo">
+        </a>
     </header>
 
     <div class="result-message">
@@ -39,7 +43,7 @@
     </div>
     <hr>
     <br>
-    <div style="margin: auto auto; width: 1050px;">
+    <div style="margin: auto auto; width: 1150px;">
         <!--追加-->
         <div class="ice-cream-photo">
             <img src="{{ asset('images/' . $category->title . '/' . $img_name->image) }}" width="300" height="300">
