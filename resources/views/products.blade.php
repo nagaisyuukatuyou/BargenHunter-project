@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>{{ $category->title }}</title>
 </head>
-<body>
+<body style="background-color: beige;">
   <header>
   <div class="line" style="display: flex;  justify-content: center; align-items: center;">
   <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
