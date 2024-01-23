@@ -41,5 +41,9 @@
         </div>
     @endforeach
     </div>
+    <hr>
+    <footer>
+    <h4>以上より商品名を選択してください。</h4>
+  </footer>
 </body>
 </html>

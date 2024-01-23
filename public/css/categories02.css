@@ -70,7 +70,8 @@ header button {
 }
 
 footer {
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
+    background-color: beige;
     padding: 10px;
     text-align: center;
 }
