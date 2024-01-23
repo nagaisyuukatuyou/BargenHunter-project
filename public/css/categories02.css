@@ -103,6 +103,11 @@ a.user-name {
     color: orange;
 }
 
+a:hover {
+    color: rgb(112, 109, 109);
+  }
+
+
 span.hid {
     max-width: 10px;
   overflow: hidden;
