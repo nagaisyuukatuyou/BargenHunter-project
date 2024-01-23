@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: beige;
+  background-color: white;
 }
 
 /*.header {
@@ -25,7 +25,8 @@ span.color {
 
 a.color {
   border-radius: 5px;
-  background-color: rgb(217, 238, 187);
+  /*background-color: rgb(236, 239, 233);*/
+  background-color: white;
   color: #a071e3;
   padding: 10px;
   font-size: 80%;
@@ -35,10 +36,11 @@ a.color {
 .result {
   border-radius: 5%;
   font-size: 90%;
-  background-color: #a071e3;  
+  /*background-color: #a071e3;*/  
   padding: 10px;
-  color: rgb(217, 238, 187);
+  color: #a071e3;
 }
+
 
 .btn {
   border-radius: 5px;
