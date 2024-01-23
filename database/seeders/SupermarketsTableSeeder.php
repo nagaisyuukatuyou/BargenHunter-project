@@ -19,6 +19,8 @@ class SupermarketsTableSeeder extends Seeder
             ['s_name' => 'スーパーマルハチ柳原店', 's_image' => 'maruhachi_yanagihara.jpg'],
             ['s_name' => 'ダイエー神戸三宮店', 's_image' => 'daie_sannomiya.jpg'],
             ['s_name' => 'ライフ神戸駅前店', 's_image' => 'life_kobe.jpg'],
+            ['s_name' => '業務スーパー ハーバーランド店', 's_image' => 'gyoumu.jpg'],
+            ['s_name' => 'ラ・ムー神戸灘店', 's_image' => 'lamu.jpg'],
         ];
 
         foreach ($supermarkets as $superket) {
