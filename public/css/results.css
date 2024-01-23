@@ -253,3 +253,9 @@ a.user-name {
 a:hover {
   color: rgb(112, 109, 109);
 }
+
+footer {
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+}

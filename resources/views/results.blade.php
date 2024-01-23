@@ -15,7 +15,7 @@
     <header>
         <a href="{{ route('top_page') }}"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
         <form style="display: inline;" action="{{ route('prices', ['category_id' => $category->id, 'product_id' => $product->product_id]) }}" method="GET">
-            <input type="text" placeholder="検索" name="keyword">
+            <input type="text" placeholder="スーパーの名前、所在地、最寄り駅で検索" name="keyword" autocomplete="off">
             <button>検索</button>
         </form>
         <a href="{{ route('home') }}" class="user-name" style="text-decoration: none; display:flex; align-items: center;">
@@ -52,6 +52,7 @@
             <div class="shop-list-item-info">
                 <div class="shop-list-item-name">スーパー名：{{ $minresult->s_name }}</div>
                 <div class="shop-list-item-price">価格：{{ $minresult->price }}円</div>
+                <div class="shop-list-item-address">最寄り駅：{{ $minresult->nearest_station }}</div>
                 <div class="shop-list-item-address">所在地：{{ $minresult->address }}</div>
                 <div class="shop-list-item-hours">開店時間：{{ $minresult->open_time }}</div>
                 <div class="shop-list-item-hours">閉店時間：{{ $minresult->close_time }}</div>
@@ -88,12 +89,12 @@
                 <div class="shop-list-item-info">
                     <div class="shop-list-item-name">スーパー名：{{ $result->s_name }}</div>
                     <div class="shop-list-item-price">価格：{{ $result->price }}円</div>
+                    <div class="shop-list-item-address">最寄り駅：{{ $result->nearest_station }}</div>
                     <div class="shop-list-item-address">所在地：{{ $result->address }}</div>
                     <div class="shop-list-item-hours">開店時間：{{ $result->open_time }}</div>
                     <div class="shop-list-item-hours">閉店時間：{{ $result->close_time }}</div>
                     <div class="shop-list-item-address">電話番号：{{ $result->phone_number }}</div>
-                    <div class="shop-list-item-address">ウェブサイト：<a href="{{ $result->web_site }}" class="btn"
-                            target="_blank">こちら</a></div>
+                    <div class="shop-list-item-address">ウェブサイト：<a href="{{ $result->web_site }}" class="btn" target="_blank">こちら</a></div>
                     <br>
                 </div>
             </div>
@@ -112,7 +113,6 @@
             @endforelse
         </div>
 </body>
-
 </html>
 
 <script>

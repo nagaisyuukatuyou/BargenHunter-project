@@ -2,9 +2,9 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="{{ asset('css/categories02.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/categories02.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>カテゴリ一覧</title>
@@ -13,7 +13,7 @@
 <header>
   <a href="{{ route('top_page') }}" style="margin-right: 300px;"><img src="{{ asset('images/アイコン/bargain_hunter_icon.jpg') }}" alt="icon"></a>
     <form style="display: inline;" action="{{ route('categories') }}" method="GET">
-      <input type="text" placeholder="検索" name="keyword">
+      <input type="text" placeholder="検索" name="keyword" autocomplete="off">
       <button>検索</button>
     </form>
     <a href="{{ route('home') }}" class="user-name" style="text-decoration: none;">
@@ -42,8 +42,9 @@
       <p>検索ワード「<span style="color: blue;">{{ $keyword }}</span>」にヒットする結果はありません。</p>
     @endforelse
   </div>
+  <hr>
   <footer>
-    <p>以上より商品のカテゴリーを選択してください。</p>
+    <h4>以上より商品のカテゴリーを選択してください。</h4>
   </footer>
 </body>
 </html>

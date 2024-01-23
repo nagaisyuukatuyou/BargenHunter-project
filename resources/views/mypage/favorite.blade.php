@@ -26,9 +26,11 @@
         <img src="{{ asset('images/店画像/'. '/' . $result->s_image) }}" width="300" height="300">
         <div class="name">スーパー名：{{ $result->s_name }}</div>
         <div class="address">所在地：{{ $result->address }}</div>
+        <div class="address">最寄り駅：{{ $result->nearest_station }}</div>
         <div class="open-time">開店時間：{{ $result->open_time }}</div>
         <div class="close-time">開店時間：{{ $result->close_time }}</div>
         <div class="tel">電話番号：{{ $result->phone_number }}</div>
+        <div class="address">ウェブサイト：<a href="{{ $result->web_site }}" class="btn" target="_blank">こちら</a></div>
         <br>
         <form action="{{ route('favoriteDelete') }}" method="POST">
             @csrf

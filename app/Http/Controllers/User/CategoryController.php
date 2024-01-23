@@ -115,11 +115,14 @@ class CategoryController extends Controller
             ->where('prices.product_id', '=', $product_id)
             ->orderBy('price');
 
-
-
-
+        //検索機能を実行した場合、以下のifによりスーパーの名前、所在地、最寄り駅より検索される。
         if (!empty($keyword)) {
-            $sql->where('s_name', 'like', "%{$keyword}%");
+            
+            $sql->where('s_name', 'like', "%{$keyword}%")
+                ->orwhere('address', 'like', "%{$keyword}%")
+                ->where('prices.product_id', $product_id)
+                ->orwhere('nearest_station', 'like', "%{$keyword}%")
+                ->where('prices.product_id', $product_id);            
             //$keyword = $keyword;
             $Results = $sql->get();
             $count = count($Results);
