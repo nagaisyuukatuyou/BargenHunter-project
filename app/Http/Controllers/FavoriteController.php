@@ -14,6 +14,9 @@ class FavoriteController extends Controller
     //お気に入り登録
     public function insert(FavoriteRequest $request)
     {
+        $url = url()->previous();
+        session(['url' => $url]);
+
         $supermarket_id = $request->supermarket_id;
         $userId = Auth::id();
 
@@ -43,8 +46,6 @@ class FavoriteController extends Controller
     public function select()
     {
 
-        $url = url()->previous();
-
         $userId = Auth::id();
         $user = User::find($userId);
 
@@ -60,11 +61,11 @@ class FavoriteController extends Controller
 
 
             $results = $this->convert($results);
-            return view('mypage.favorite', ['results' => $results, 'url' => $url]);
+            return view('mypage.favorite', ['results' => $results]);
 
         } else {
 
-            return view('mypage.favorite', ['url' => $url]);
+            return view('mypage.favorite');
 
         }
 

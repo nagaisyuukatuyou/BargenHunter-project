@@ -40,3 +40,8 @@
 </body>
 
 </html>
+
+<?php
+ $url = url()->current();
+ session(['url' => $url]);
+ ?>
