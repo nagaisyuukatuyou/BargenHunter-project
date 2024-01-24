@@ -34,15 +34,15 @@
             <div class="textarea">
                 <div class="text-name">
                     <label for="name">名前　　　　　</label>
-                    <input type="text" name="name" autofocus>
+                    <input type="text" name="name" autofocus autocomplete="off">
                 </div>
                 <div class="text-email">
                     <label for="email">メールアドレス</label>
-                    <input type="text" name="email">
+                    <input type="text" name="email" autocomplete="off">
                 </div>
                 <div class="text-password">
                     <label for="password">パスワード　　</label>
-                    <input type="text" name="password">
+                    <input type="password" name="password">
                 </div>
             </div>
             <div class="create_button">
