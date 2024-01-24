@@ -20,9 +20,15 @@
             <a class="button start" href="{{ route('categories') }}" style="text-decoration: none;">
                 <div>スタート</div>
             </a>
+            @if( Auth::check() )
+            <a class="button signin" href="{{ route('home') }}" style="text-decoration: none;">
+                <div>マイページ</div>
+            </a>
+            @else
             <a class="button signin" href="{{ route('showLogin') }}" style="text-decoration: none;">
                 <div>サインイン</div>
             </a>
+            @endif
         </div>
     </div>
   </div>
